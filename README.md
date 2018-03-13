@@ -10,7 +10,8 @@ compress file
  1.zip和rar暂时只支持解压
  
  调用方式：
- <code>
+ ####
+ <pre>
  String FileNameNotExt = info.getFileName().substring(0,info.getFileName().lastIndexOf("."));
         String dir = new File( info.getFilePath()).getParent()+"/"+FileNameNotExt;
         Log.e("DeCompressTask","dir:"+dir);
@@ -42,4 +43,4 @@ compress file
                Toast.makeText(getActivity(), errorMsg, Toast.LENGTH_SHORT).show();
            }
        }).execute(info.getFilePath(),dir);
-</code>
+</pre>
