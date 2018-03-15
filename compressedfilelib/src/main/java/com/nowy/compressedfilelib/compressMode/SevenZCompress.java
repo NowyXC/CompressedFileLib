@@ -1,8 +1,8 @@
-package com.nowy.compressedfilelib.compressMode;
+package com.mdd.baselib.utils.compressFile.compressMode;
 
 import com.hzy.libp7zip.P7ZipApi;
-import com.nowy.compressedfilelib.task.DeCompressTask;
-import com.nowy.compressedfilelib.utils.Command;
+import com.mdd.baselib.utils.compressFile.listener.OnProgressListener;
+import com.mdd.baselib.utils.compressFile.utils.Command;
 
 /**
  * Created by Nowy on 2018/3/12.
@@ -15,7 +15,7 @@ public class SevenZCompress implements ICompressMode {
     }
 
     @Override
-    public int deCompress(String filePath, String outPath, String pwd, DeCompressTask.OnProgressListener listener) {
+    public int deCompress(String filePath, String outPath, String pwd,OnProgressListener listener) {
         return P7ZipApi.executeCommand(Command.getExtractCmd(filePath, outPath));
     }
 

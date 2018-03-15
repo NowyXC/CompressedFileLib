@@ -1,16 +1,13 @@
-package com.nowy.compressedfilelib.task;
+package com.mdd.baselib.utils.compressFile.task;
 
 import android.os.AsyncTask;
-import android.text.TextUtils;
 
-import com.nowy.compressedfilelib.R;
-import com.nowy.compressedfilelib.compressMode.ICompressMode;
-import com.nowy.compressedfilelib.compressMode.RARCompress;
-import com.nowy.compressedfilelib.compressMode.SevenZCompress;
-import com.nowy.compressedfilelib.compressMode.ZipCompress;
-import com.nowy.compressedfilelib.constant.Mode;
-import com.nowy.compressedfilelib.listener.OnCompressListener;
-import com.nowy.compressedfilelib.utils.ExitCode;
+import com.mdd.baselib.utils.compressFile.compressMode.ICompressMode;
+import com.mdd.baselib.utils.compressFile.listener.OnCompressListener;
+import com.mdd.baselib.utils.compressFile.listener.OnProgressListener;
+import com.mdd.baselib.utils.compressFile.utils.ExitCode;
+import com.mdd.baselib.utils.compressFile.utils.ModeUtil;
+
 
 /**
  * Created by Nowy on 2018/3/12.
@@ -34,7 +31,7 @@ public class DeCompressTask extends AsyncTask<String,Integer,Integer> {
 
     @Override
     protected Integer doInBackground(String... strings) {
-        ICompressMode compressMode = getCorrectCompress(getFileType(strings[0]));
+        ICompressMode compressMode = ModeUtil.getCorrectCompress(ModeUtil.getFileType(strings[0]));
         if(compressMode != null){
             return compressMode.deCompress(strings[0],strings[1],"",new OnProgressListener(){
                 @Override
@@ -58,40 +55,8 @@ public class DeCompressTask extends AsyncTask<String,Integer,Integer> {
     protected void onPostExecute(Integer s) {
         super.onPostExecute(s);
         showResult(s,mOnCompressListener);
-
     }
 
-
-    /**
-     * 获取文件类型
-     * @param filename
-     * @return
-     */
-    private String getFileType(String filename){
-        String type=null;
-        if (TextUtils.isEmpty(filename)) return type;
-        String[] temp=filename.split("\\.");
-        type=temp[temp.length-1];
-        return type;
-    }
-
-
-    private ICompressMode getCorrectCompress(String type){
-        ICompressMode mode = null;
-        switch (type){
-            case Mode._7Z:
-                mode =  new SevenZCompress();
-                break;
-            case Mode._ZIP:
-                mode =  new ZipCompress();
-                break;
-            case Mode._RAR:
-                mode =  new RARCompress();
-                break;
-        }
-
-        return mode;
-    }
 
 
 
@@ -104,24 +69,12 @@ public class DeCompressTask extends AsyncTask<String,Integer,Integer> {
                     listener.onFinish();
                 break;
             case ExitCode.EXIT_WARNING:
-                if(listener != null)
-                    listener.onError( R.string.msg_ret_warning);
-                break;
             case ExitCode.EXIT_FATAL:
-                if(listener != null)
-                    listener.onError(R.string.msg_ret_fault);
-                break;
             case ExitCode.EXIT_CMD_ERROR:
-                if(listener != null)
-                    listener.onError(R.string.msg_ret_command);
-                break;
             case ExitCode.EXIT_MEMORY_ERROR:
-                if(listener != null)
-                    listener.onError( R.string.msg_ret_memmory);
-                break;
             case ExitCode.EXIT_NOT_SUPPORT:
                 if(listener != null)
-                    listener.onError( R.string.msg_ret_user_stop);
+                    listener.onError(result);
                 break;
             default:
                 break;
@@ -129,8 +82,6 @@ public class DeCompressTask extends AsyncTask<String,Integer,Integer> {
     }
 
 
-    public interface OnProgressListener{
-        void onProgress(int progress,int total);
-    }
+
 
 }

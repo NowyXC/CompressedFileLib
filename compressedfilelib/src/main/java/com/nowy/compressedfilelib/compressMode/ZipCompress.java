@@ -1,9 +1,9 @@
-package com.nowy.compressedfilelib.compressMode;
+package com.mdd.baselib.utils.compressFile.compressMode;
 
 import android.text.TextUtils;
 
-import com.nowy.compressedfilelib.task.DeCompressTask;
-import com.nowy.compressedfilelib.utils.ExitCode;
+import com.mdd.baselib.utils.compressFile.listener.OnProgressListener;
+import com.mdd.baselib.utils.compressFile.utils.ExitCode;
 
 import net.lingala.zip4j.core.ZipFile;
 import net.lingala.zip4j.exception.ZipException;
@@ -24,7 +24,7 @@ public class ZipCompress implements ICompressMode {
 
 
     @Override
-    public int deCompress(String filePath, String outPath, String pwd,DeCompressTask.OnProgressListener listener) {
+    public int deCompress(String filePath, String outPath, String pwd,OnProgressListener listener) {
         if (TextUtils.isEmpty(filePath) || TextUtils.isEmpty(outPath)){
             return ExitCode.EXIT_FATAL;
         }

@@ -1,13 +1,15 @@
-package com.nowy.compressedfilelib.compressMode;
+package com.mdd.baselib.utils.compressFile.compressMode;
 
-import com.nowy.compressedfilelib.task.DeCompressTask;
-import com.nowy.compressedfilelib.utils.ExitCode;
+
+import com.mdd.baselib.utils.compressFile.listener.OnProgressListener;
+import com.mdd.baselib.utils.compressFile.utils.ExitCode;
 
 import java.io.File;
 import java.io.FileOutputStream;
 
 import de.innosystec.unrar.Archive;
 import de.innosystec.unrar.rarfile.FileHeader;
+
 
 /**
  * Created by Nowy on 2018/3/12.
@@ -20,7 +22,7 @@ public class RARCompress implements ICompressMode {
     }
 
     @Override
-    public int deCompress(String filePath, String outPath, String pwd,DeCompressTask.OnProgressListener progressListener) {
+    public int deCompress(String filePath, String outPath, String pwd,OnProgressListener progressListener) {
         File srcFile = new File(filePath);
         if (null == outPath || "".equals(outPath)) {
             outPath = srcFile.getParentFile().getPath();
