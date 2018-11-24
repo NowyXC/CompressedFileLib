@@ -2,7 +2,7 @@ package com.nowy.compressedfilelib.compressMode;
 
 import android.text.TextUtils;
 
-import com.mdd.baselib.utils.compressFile.listener.OnProgressListener;
+import com.nowy.compressedfilelib.listener.OnProgressListener;
 import com.nowy.compressedfilelib.utils.ExitCode;
 
 import net.lingala.zip4j.core.ZipFile;

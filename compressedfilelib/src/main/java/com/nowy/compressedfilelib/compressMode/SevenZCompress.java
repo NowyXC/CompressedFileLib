@@ -1,7 +1,7 @@
 package com.nowy.compressedfilelib.compressMode;
 
 import com.hzy.libp7zip.P7ZipApi;
-import com.mdd.baselib.utils.compressFile.listener.OnProgressListener;
+import com.nowy.compressedfilelib.listener.OnProgressListener;
 import com.nowy.compressedfilelib.utils.Command;
 
 /**
