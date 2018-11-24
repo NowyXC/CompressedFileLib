@@ -1,7 +1,7 @@
-package com.mdd.baselib.utils.compressFile.compressMode;
+package com.nowy.compressedfilelib.compressMode;
 
 
-import com.mdd.baselib.utils.compressFile.listener.OnProgressListener;
+import com.nowy.compressedfilelib.listener.OnProgressListener;
 
 /**
  * Created by Nowy on 2018/3/12.

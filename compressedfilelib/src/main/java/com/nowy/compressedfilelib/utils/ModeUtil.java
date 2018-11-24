@@ -1,12 +1,12 @@
-package com.mdd.baselib.utils.compressFile.utils;
+package com.nowy.compressedfilelib.utils;
 
 import android.text.TextUtils;
 
-import com.mdd.baselib.utils.compressFile.compressMode.ICompressMode;
-import com.mdd.baselib.utils.compressFile.compressMode.RARCompress;
-import com.mdd.baselib.utils.compressFile.compressMode.SevenZCompress;
-import com.mdd.baselib.utils.compressFile.compressMode.ZipCompress;
-import com.mdd.baselib.utils.compressFile.constant.Mode;
+import com.nowy.compressedfilelib.compressMode.ICompressMode;
+import com.nowy.compressedfilelib.compressMode.RARCompress;
+import com.nowy.compressedfilelib.compressMode.SevenZCompress;
+import com.nowy.compressedfilelib.compressMode.ZipCompress;
+import com.nowy.compressedfilelib.constant.Mode;
 
 /**
  * Created by Nowy on 2018/3/15.

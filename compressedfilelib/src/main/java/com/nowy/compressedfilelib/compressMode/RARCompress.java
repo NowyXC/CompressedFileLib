@@ -1,8 +1,9 @@
-package com.mdd.baselib.utils.compressFile.compressMode;
+package com.nowy.compressedfilelib.compressMode;
 
 
-import com.mdd.baselib.utils.compressFile.listener.OnProgressListener;
-import com.mdd.baselib.utils.compressFile.utils.ExitCode;
+
+import com.nowy.compressedfilelib.listener.OnProgressListener;
+import com.nowy.compressedfilelib.utils.ExitCode;
 
 import java.io.File;
 import java.io.FileOutputStream;

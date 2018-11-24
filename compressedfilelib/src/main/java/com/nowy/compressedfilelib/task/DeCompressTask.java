@@ -1,12 +1,12 @@
-package com.mdd.baselib.utils.compressFile.task;
+package com.nowy.compressedfilelib.task;
 
 import android.os.AsyncTask;
 
-import com.mdd.baselib.utils.compressFile.compressMode.ICompressMode;
-import com.mdd.baselib.utils.compressFile.listener.OnCompressListener;
-import com.mdd.baselib.utils.compressFile.listener.OnProgressListener;
-import com.mdd.baselib.utils.compressFile.utils.ExitCode;
-import com.mdd.baselib.utils.compressFile.utils.ModeUtil;
+import com.nowy.compressedfilelib.compressMode.ICompressMode;
+import com.nowy.compressedfilelib.listener.OnCompressListener;
+import com.nowy.compressedfilelib.listener.OnProgressListener;
+import com.nowy.compressedfilelib.utils.ExitCode;
+import com.nowy.compressedfilelib.utils.ModeUtil;
 
 
 /**

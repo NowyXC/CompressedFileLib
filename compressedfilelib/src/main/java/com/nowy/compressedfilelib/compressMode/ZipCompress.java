@@ -1,9 +1,9 @@
-package com.mdd.baselib.utils.compressFile.compressMode;
+package com.nowy.compressedfilelib.compressMode;
 
 import android.text.TextUtils;
 
 import com.mdd.baselib.utils.compressFile.listener.OnProgressListener;
-import com.mdd.baselib.utils.compressFile.utils.ExitCode;
+import com.nowy.compressedfilelib.utils.ExitCode;
 
 import net.lingala.zip4j.core.ZipFile;
 import net.lingala.zip4j.exception.ZipException;
